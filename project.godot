@@ -1,0 +1,99 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "",
+"class": "GitAPI",
+"language": "NativeScript",
+"path": "res://addons/godot-git-plugin/git_api.gdns"
+}, {
+"base": "",
+"class": "TextureButtonFossil0Electric100",
+"language": "GDScript",
+"path": "res://Scripts/TextureButtonFossil0Electric100.gd"
+}, {
+"base": "",
+"class": "TextureButtonFossil100Electric0",
+"language": "GDScript",
+"path": "res://Scripts/TextureButtonFossil100Electric0.gd"
+}, {
+"base": "",
+"class": "TextureButtonFossil25Electric75",
+"language": "GDScript",
+"path": "res://Scripts/TextureButtonFossil25Electric75.gd"
+}, {
+"base": "",
+"class": "TextureButtonFossil50Electric50",
+"language": "GDScript",
+"path": "res://Scripts/TextureButtonFossil50Electric50.gd"
+}, {
+"base": "",
+"class": "TextureButtonFossil75Electric25",
+"language": "GDScript",
+"path": "res://Scripts/TextureButtonFossil75Electric25.gd"
+}, {
+"base": "",
+"class": "TextureButtonSufficiency0",
+"language": "GDScript",
+"path": "res://Scripts/TextureButtonSufficiency0.gd"
+}, {
+"base": "",
+"class": "TextureButtonSufficiency100",
+"language": "GDScript",
+"path": "res://Scripts/TextureButtonSufficiency100.gd"
+}, {
+"base": "",
+"class": "TextureButtonSufficiency50",
+"language": "GDScript",
+"path": "res://Scripts/TextureButtonSufficiency50.gd"
+} ]
+_global_script_class_icons={
+"GitAPI": "",
+"TextureButtonFossil0Electric100": "",
+"TextureButtonFossil100Electric0": "",
+"TextureButtonFossil25Electric75": "",
+"TextureButtonFossil50Electric50": "",
+"TextureButtonFossil75Electric25": "",
+"TextureButtonSufficiency0": "",
+"TextureButtonSufficiency100": "",
+"TextureButtonSufficiency50": ""
+}
+
+[application]
+
+config/name="CO2 Countdown"
+run/main_scene="res://Main.tscn"
+boot_splash/image="res://Resources/co2-icon-512.png"
+config/icon="res://Resources/co2-icon-512.png"
+
+[display]
+
+window/size/width=1920
+window/size/height=960
+window/stretch/mode="2d"
+
+[gdnative]
+
+singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
+
+[gui]
+
+theme/custom="res://theme.tres"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://default_env.tres"

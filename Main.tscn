@@ -1,0 +1,1139 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://Scripts/ButtonActionQuit.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/ButtonAction.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/EnergyInfrastructure.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/IndustryInfrastructure.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/WorldMap.gd" type="Script" id=5]
+[ext_resource path="res://Resources/solarsystemscopemap.jpg" type="Texture" id=6]
+[ext_resource path="res://Scripts/InfrastructureInitAsia.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/TabContainer.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/AgrarInfrastructure.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/BuildingInfrastructure.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/TrafficInfrastructure.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scripts/InfrastructureInitAfrica.gd" type="Script" id=12]
+[ext_resource path="res://Scripts/InfrastructureInitNorthAmerica.gd" type="Script" id=13]
+[ext_resource path="res://Scripts/InfrastructureInitEurope.gd" type="Script" id=14]
+[ext_resource path="res://Scripts/Timer.gd" type="Script" id=15]
+[ext_resource path="res://theme.tres" type="Theme" id=16]
+[ext_resource path="res://new_styleboxflat.tres" type="StyleBox" id=17]
+[ext_resource path="res://Scripts/ButtonRestart.gd" type="Script" id=18]
+[ext_resource path="res://Resources/circle_red.png" type="Texture" id=19]
+[ext_resource path="res://Resources/circle_blue.png" type="Texture" id=20]
+[ext_resource path="res://Scripts/InfrastructureInitAustralia.gd" type="Script" id=21]
+[ext_resource path="res://Scripts/InfrastructureInitSouthAmerica.gd" type="Script" id=22]
+[ext_resource path="res://Scripts/ButtonQuit.gd" type="Script" id=23]
+[ext_resource path="res://Sounds/countdownmusic.mp3" type="AudioStream" id=24]
+[ext_resource path="res://Sounds/menumusic.mp3" type="AudioStream" id=25]
+[ext_resource path="res://Sounds/loose.wav" type="AudioStream" id=26]
+[ext_resource path="res://Sounds/win.wav" type="AudioStream" id=27]
+[ext_resource path="res://Scripts/ButtonTutorial.gd" type="Script" id=28]
+[ext_resource path="res://Scripts/ButtonTutorialTabs.gd" type="Script" id=29]
+[ext_resource path="res://Resources/yellowarrowup.png" type="Texture" id=30]
+[ext_resource path="res://Scripts/ButtonMiddleGame.gd" type="Script" id=31]
+[ext_resource path="res://Scripts/ButtonAbout.gd" type="Script" id=32]
+[ext_resource path="res://Scripts/PopupPanelTutorial.gd" type="Script" id=33]
+[ext_resource path="res://Scripts/TimerTutorialArrow.gd" type="Script" id=34]
+[ext_resource path="res://Scripts/TimerTutorialAction.gd" type="Script" id=35]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.337255, 0.501961, 0.443137, 1 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="WorldMap" type="Sprite" parent="."]
+position = Vector2( 953, 553 )
+scale = Vector2( 1.07227, 1.16309 )
+texture = ExtResource( 6 )
+script = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="WorldMap"]
+margin_left = -898.865
+margin_top = -476.0
+margin_right = 1021.14
+margin_bottom = -436.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelCO2" type="Label" parent="WorldMap/ColorRect"]
+margin_left = 35.3556
+margin_top = 6.421
+margin_right = 148.355
+margin_bottom = 49.421
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0.737255, 0.105882, 0.34902, 1 )
+text = "CO2 Budget"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelCO2Value" type="Label" parent="WorldMap/ColorRect/LabelCO2"]
+margin_left = 381.434
+margin_top = -5.24521e-06
+margin_right = 449.433
+margin_bottom = 48.0
+custom_colors/font_color = Color( 0.737255, 0.105882, 0.34902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelBIP" type="Label" parent="WorldMap/ColorRect"]
+margin_left = 757.189
+margin_top = 6.421
+margin_right = 973.189
+margin_bottom = 60.421
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0.647059, 0.784314, 0.733333, 1 )
+text = "Income"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelBIPValue" type="Label" parent="WorldMap/ColorRect/LabelBIP"]
+margin_left = 230.136
+margin_right = 345.136
+margin_bottom = 47.0
+custom_colors/font_color = Color( 0.647059, 0.784314, 0.733333, 1 )
+
+[node name="LabelTime" type="Label" parent="WorldMap/ColorRect"]
+margin_left = 1358.72
+margin_top = 4.70102
+margin_right = 1502.72
+margin_bottom = 41.701
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0.862745, 0.866667, 0.847059, 1 )
+text = "Week"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LabelTimeValue" type="Label" parent="WorldMap/ColorRect/LabelTime"]
+margin_left = 160.407
+margin_top = 0.859779
+margin_right = 220.407
+margin_bottom = 36.8598
+custom_colors/font_color = Color( 0.862745, 0.866667, 0.847059, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonAction" type="Button" parent="WorldMap"]
+margin_left = -828.0
+margin_top = 227.826
+margin_right = -556.0
+margin_bottom = 311.826
+theme = ExtResource( 16 )
+text = "Action"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonAbout" type="Button" parent="WorldMap"]
+margin_left = 772.539
+margin_top = -437.17
+margin_right = 837.539
+margin_bottom = -386.17
+theme = ExtResource( 16 )
+text = "?"
+script = ExtResource( 32 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonQuit" type="Button" parent="WorldMap"]
+margin_left = 836.798
+margin_top = -437.17
+margin_right = 901.798
+margin_bottom = -386.17
+theme = ExtResource( 16 )
+text = "X"
+script = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="WorldMap"]
+wait_time = 0.75
+script = ExtResource( 15 )
+
+[node name="Music" type="AudioStreamPlayer" parent="WorldMap/Timer"]
+stream = ExtResource( 24 )
+volume_db = -10.0
+
+[node name="WinSound" type="AudioStreamPlayer" parent="WorldMap/Timer"]
+stream = ExtResource( 27 )
+
+[node name="LoseSound" type="AudioStreamPlayer" parent="WorldMap/Timer"]
+stream = ExtResource( 26 )
+
+[node name="LabelAfricaCO2" type="Label" parent="WorldMap"]
+margin_left = 39.1693
+margin_top = 36.9705
+margin_right = 183.169
+margin_bottom = 91.9704
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0.737255, 0.105882, 0.34902, 1 )
+text = "0000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpriteCO2" type="Sprite" parent="WorldMap/LabelAfricaCO2"]
+show_behind_parent = true
+position = Vector2( 50, -30 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 19 )
+
+[node name="LabelNorthAmericaCO2" type="Label" parent="WorldMap"]
+margin_left = -694.787
+margin_top = -236.439
+margin_right = -550.787
+margin_bottom = -181.439
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0.737255, 0.105882, 0.34902, 1 )
+text = "0000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpriteCO2" type="Sprite" parent="WorldMap/LabelNorthAmericaCO2"]
+show_behind_parent = true
+position = Vector2( 50, -30 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 19 )
+
+[node name="LabelSouthAmericaCO2" type="Label" parent="WorldMap"]
+margin_left = -414.074
+margin_top = 69.6421
+margin_right = -270.074
+margin_bottom = 124.642
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0.737255, 0.105882, 0.34902, 1 )
+text = "0000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpriteCO2" type="Sprite" parent="WorldMap/LabelSouthAmericaCO2"]
+show_behind_parent = true
+position = Vector2( 50, -30 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 19 )
+
+[node name="LabelEuropeCO2" type="Label" parent="WorldMap"]
+margin_left = -53.1583
+margin_top = -270.83
+margin_right = 90.8417
+margin_bottom = -215.83
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0.737255, 0.105882, 0.34902, 1 )
+text = "0000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpriteCO2" type="Sprite" parent="WorldMap/LabelEuropeCO2"]
+show_behind_parent = true
+position = Vector2( 50, -30 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 19 )
+
+[node name="LabelAustraliaCO2" type="Label" parent="WorldMap"]
+margin_left = 622.977
+margin_top = 160.779
+margin_right = 766.977
+margin_bottom = 215.779
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0.737255, 0.105882, 0.34902, 1 )
+text = "0000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpriteCO2" type="Sprite" parent="WorldMap/LabelAustraliaCO2"]
+show_behind_parent = true
+position = Vector2( 50, -30 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 19 )
+
+[node name="LabelAsiaCO2" type="Label" parent="WorldMap"]
+margin_left = 504.537
+margin_top = -177.115
+margin_right = 648.537
+margin_bottom = -122.115
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0.737255, 0.105882, 0.34902, 1 )
+text = "0000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpriteCO2" type="Sprite" parent="WorldMap/LabelAsiaCO2"]
+show_behind_parent = true
+position = Vector2( 50, -30 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 19 )
+
+[node name="LabelAfricaBIP" type="Label" parent="WorldMap"]
+margin_left = 177.195
+margin_top = 36.1107
+margin_right = 321.195
+margin_bottom = 79.1107
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0.647059, 0.784314, 0.733333, 1 )
+text = "0000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpriteBIP" type="Sprite" parent="WorldMap/LabelAfricaBIP"]
+show_behind_parent = true
+position = Vector2( 50, -30 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 20 )
+
+[node name="LabelEuropeBIP" type="Label" parent="WorldMap"]
+margin_left = 93.2601
+margin_top = -270.831
+margin_right = 237.26
+margin_bottom = -227.831
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0.647059, 0.784314, 0.733333, 1 )
+text = "0000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpriteBIP" type="Sprite" parent="WorldMap/LabelEuropeBIP"]
+show_behind_parent = true
+position = Vector2( 50, -30 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 20 )
+
+[node name="LabelNorthAmericaBIP" type="Label" parent="WorldMap"]
+margin_left = -551.167
+margin_top = -236.439
+margin_right = -407.167
+margin_bottom = -193.439
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0.647059, 0.784314, 0.733333, 1 )
+text = "0000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpriteBIP" type="Sprite" parent="WorldMap/LabelNorthAmericaBIP"]
+show_behind_parent = true
+position = Vector2( 50, -30 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 20 )
+
+[node name="LabelSouthAmericaBIP" type="Label" parent="WorldMap"]
+margin_left = -278.848
+margin_top = 69.642
+margin_right = -134.848
+margin_bottom = 112.643
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0.647059, 0.784314, 0.733333, 1 )
+text = "0000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpriteBIP" type="Sprite" parent="WorldMap/LabelSouthAmericaBIP"]
+show_behind_parent = true
+position = Vector2( 50, -30 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 20 )
+
+[node name="LabelAsiaBIP" type="Label" parent="WorldMap"]
+margin_left = 648.798
+margin_top = -177.0
+margin_right = 792.798
+margin_bottom = -133.0
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0.647059, 0.784314, 0.733333, 1 )
+text = "0000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpriteBIP" type="Sprite" parent="WorldMap/LabelAsiaBIP"]
+show_behind_parent = true
+position = Vector2( 50, -30 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 20 )
+
+[node name="LabelAustraliaBIP" type="Label" parent="WorldMap"]
+margin_left = 761.936
+margin_top = 160.778
+margin_right = 905.936
+margin_bottom = 203.778
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0.647059, 0.784314, 0.733333, 1 )
+text = "0000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SpriteBIP" type="Sprite" parent="WorldMap/LabelAustraliaBIP"]
+show_behind_parent = true
+position = Vector2( 50, -30 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 20 )
+
+[node name="PopupPanelTutorial" type="Panel" parent="WorldMap"]
+visible = false
+margin_left = -510.133
+margin_top = -320.697
+margin_right = 288.867
+margin_bottom = 128.303
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 33 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabelTutorial" type="RichTextLabel" parent="WorldMap/PopupPanelTutorial"]
+margin_left = 21.0
+margin_top = 14.0
+margin_right = 775.0
+margin_bottom = 366.0
+theme = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonOk" type="Button" parent="WorldMap/PopupPanelTutorial"]
+margin_left = 279.804
+margin_top = 369.494
+margin_right = 505.804
+margin_bottom = 436.494
+theme = ExtResource( 16 )
+text = "Ok"
+script = ExtResource( 28 )
+
+[node name="SpriteContinents" type="Sprite" parent="WorldMap/PopupPanelTutorial"]
+visible = false
+position = Vector2( 1151.76, 208.066 )
+scale = Vector2( 0.5, 0.4 )
+texture = ExtResource( 30 )
+
+[node name="SpriteCO2" type="Sprite" parent="WorldMap/PopupPanelTutorial"]
+visible = false
+position = Vector2( 161.34, -78.9154 )
+scale = Vector2( 0.5, 0.4 )
+texture = ExtResource( 30 )
+
+[node name="SpriteIncome" type="Sprite" parent="WorldMap/PopupPanelTutorial"]
+visible = false
+position = Vector2( 649.09, -78.9152 )
+scale = Vector2( 0.5, 0.4 )
+texture = ExtResource( 30 )
+
+[node name="Timer" type="Timer" parent="WorldMap/PopupPanelTutorial"]
+wait_time = 0.05
+script = ExtResource( 34 )
+
+[node name="PopupPanelMiddleGame" type="Panel" parent="WorldMap"]
+visible = false
+margin_left = -551.034
+margin_top = -395.55
+margin_right = 386.966
+margin_bottom = 180.45
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabelTutorial" type="RichTextLabel" parent="WorldMap/PopupPanelMiddleGame"]
+margin_left = 21.0
+margin_top = 14.0
+margin_right = 930.0
+margin_bottom = 494.0
+theme = ExtResource( 16 )
+text = "You already blew half of the CO2 budget into the atmosphere.
+Hint: Don't save too much money, instead try to spend your income as quickly as possible. Buy upgrades of policies equally distributed on all 3 screws (Substitution, Efficiency, Sufficiency)."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonOk" type="Button" parent="WorldMap/PopupPanelMiddleGame"]
+margin_left = 350.525
+margin_top = 500.443
+margin_right = 576.525
+margin_bottom = 567.443
+theme = ExtResource( 16 )
+text = "Ok"
+script = ExtResource( 31 )
+
+[node name="PopupPanelAbout" type="Panel" parent="WorldMap"]
+visible = false
+margin_left = -551.034
+margin_top = -395.55
+margin_right = 386.966
+margin_bottom = 304.45
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabelTutorial" type="RichTextLabel" parent="WorldMap/PopupPanelAbout"]
+margin_left = 21.0
+margin_top = 14.0
+margin_right = 930.0
+margin_bottom = 694.0
+theme = ExtResource( 16 )
+text = "CO2 Countdown, V 1.00
+
+A game written by Albin Meyer, the author of the book “Wie funktioniert die Welt? 50 Fragen unserer Zeit”, see https://wie-funktioniert-die-welt.ch
+
+This game was made using Godot Engine 3.4.2. The background music is my own one.
+License: CC BY-NC-SA, 2022"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonOk" type="Button" parent="WorldMap/PopupPanelAbout"]
+margin_left = 350.525
+margin_top = 600.443
+margin_right = 576.525
+margin_bottom = 667.443
+theme = ExtResource( 16 )
+text = "Ok"
+script = ExtResource( 31 )
+
+[node name="PanelAction" type="Panel" parent="."]
+visible = false
+anchor_bottom = 100.0
+margin_top = 45.0
+margin_right = 1937.0
+margin_bottom = 960.0
+theme = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="PanelAction"]
+margin_left = 21.0
+margin_top = 16.0
+margin_right = 1795.0
+margin_bottom = 910.0
+custom_styles/tab_fg = ExtResource( 17 )
+tab_align = 0
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Europe" type="Tabs" parent="PanelAction/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+script = ExtResource( 14 )
+
+[node name="TabContainerEurope" type="TabContainer" parent="PanelAction/TabContainer/Europe"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 2.0
+margin_bottom = 1.0
+custom_styles/tab_fg = ExtResource( 17 )
+tab_align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Traffic" type="Tabs" parent="PanelAction/TabContainer/Europe/TabContainerEurope"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DTrafficInfrastructure" parent="PanelAction/TabContainer/Europe/TabContainerEurope/Traffic" instance=ExtResource( 11 )]
+position = Vector2( -8, -64 )
+script = null
+
+[node name="Energy" type="Tabs" parent="PanelAction/TabContainer/Europe/TabContainerEurope"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DEnergyInfrastructure" parent="PanelAction/TabContainer/Europe/TabContainerEurope/Energy" instance=ExtResource( 3 )]
+position = Vector2( -8, -64 )
+
+[node name="Agriculture" type="Tabs" parent="PanelAction/TabContainer/Europe/TabContainerEurope"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DAgronomicalInfrastructure" parent="PanelAction/TabContainer/Europe/TabContainerEurope/Agriculture" instance=ExtResource( 9 )]
+position = Vector2( -8, -64 )
+
+[node name="Buildings" type="Tabs" parent="PanelAction/TabContainer/Europe/TabContainerEurope"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DBuildingInfrastructure" parent="PanelAction/TabContainer/Europe/TabContainerEurope/Buildings" instance=ExtResource( 10 )]
+position = Vector2( -8, -64 )
+
+[node name="Industry" type="Tabs" parent="PanelAction/TabContainer/Europe/TabContainerEurope"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DIndustryInfrastructure" parent="PanelAction/TabContainer/Europe/TabContainerEurope/Industry" instance=ExtResource( 4 )]
+position = Vector2( -8, -64 )
+
+[node name="NorthAm" type="Tabs" parent="PanelAction/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+script = ExtResource( 13 )
+
+[node name="TabContainerNorthAmerica" type="TabContainer" parent="PanelAction/TabContainer/NorthAm"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 2.0
+margin_bottom = 1.0
+custom_styles/tab_fg = ExtResource( 17 )
+tab_align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Traffic" type="Tabs" parent="PanelAction/TabContainer/NorthAm/TabContainerNorthAmerica"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DTrafficInfrastructure" parent="PanelAction/TabContainer/NorthAm/TabContainerNorthAmerica/Traffic" instance=ExtResource( 11 )]
+position = Vector2( -8, -64 )
+script = null
+
+[node name="Energy" type="Tabs" parent="PanelAction/TabContainer/NorthAm/TabContainerNorthAmerica"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DEnergyInfrastructure" parent="PanelAction/TabContainer/NorthAm/TabContainerNorthAmerica/Energy" instance=ExtResource( 3 )]
+position = Vector2( -8, -64 )
+
+[node name="Agriculture" type="Tabs" parent="PanelAction/TabContainer/NorthAm/TabContainerNorthAmerica"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DAgronomicalInfrastructure" parent="PanelAction/TabContainer/NorthAm/TabContainerNorthAmerica/Agriculture" instance=ExtResource( 9 )]
+position = Vector2( -8, -64 )
+
+[node name="Buildings" type="Tabs" parent="PanelAction/TabContainer/NorthAm/TabContainerNorthAmerica"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DBuildingInfrastructure" parent="PanelAction/TabContainer/NorthAm/TabContainerNorthAmerica/Buildings" instance=ExtResource( 10 )]
+position = Vector2( -8, -64 )
+
+[node name="Industry" type="Tabs" parent="PanelAction/TabContainer/NorthAm/TabContainerNorthAmerica"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DIndustryInfrastructure" parent="PanelAction/TabContainer/NorthAm/TabContainerNorthAmerica/Industry" instance=ExtResource( 4 )]
+position = Vector2( -8, -64 )
+
+[node name="SouthAm" type="Tabs" parent="PanelAction/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+script = ExtResource( 22 )
+
+[node name="TabContainerSouthAmerica" type="TabContainer" parent="PanelAction/TabContainer/SouthAm"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 2.0
+margin_bottom = 1.0
+custom_styles/tab_fg = ExtResource( 17 )
+tab_align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Traffic" type="Tabs" parent="PanelAction/TabContainer/SouthAm/TabContainerSouthAmerica"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DTrafficInfrastructure" parent="PanelAction/TabContainer/SouthAm/TabContainerSouthAmerica/Traffic" instance=ExtResource( 11 )]
+position = Vector2( -8, -64 )
+script = null
+
+[node name="Energy" type="Tabs" parent="PanelAction/TabContainer/SouthAm/TabContainerSouthAmerica"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DEnergyInfrastructure" parent="PanelAction/TabContainer/SouthAm/TabContainerSouthAmerica/Energy" instance=ExtResource( 3 )]
+position = Vector2( -8, -64 )
+
+[node name="Agriculture" type="Tabs" parent="PanelAction/TabContainer/SouthAm/TabContainerSouthAmerica"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DAgronomicalInfrastructure" parent="PanelAction/TabContainer/SouthAm/TabContainerSouthAmerica/Agriculture" instance=ExtResource( 9 )]
+position = Vector2( -8, -64 )
+
+[node name="Buildings" type="Tabs" parent="PanelAction/TabContainer/SouthAm/TabContainerSouthAmerica"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DBuildingInfrastructure" parent="PanelAction/TabContainer/SouthAm/TabContainerSouthAmerica/Buildings" instance=ExtResource( 10 )]
+position = Vector2( -8, -64 )
+
+[node name="Industry" type="Tabs" parent="PanelAction/TabContainer/SouthAm/TabContainerSouthAmerica"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DIndustryInfrastructure" parent="PanelAction/TabContainer/SouthAm/TabContainerSouthAmerica/Industry" instance=ExtResource( 4 )]
+position = Vector2( -8, -64 )
+
+[node name="Asia" type="Tabs" parent="PanelAction/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+script = ExtResource( 7 )
+
+[node name="TabContainerAsia" type="TabContainer" parent="PanelAction/TabContainer/Asia"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 2.0
+margin_bottom = 1.0
+custom_styles/tab_fg = ExtResource( 17 )
+tab_align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Traffic" type="Tabs" parent="PanelAction/TabContainer/Asia/TabContainerAsia"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DTrafficInfrastructure" parent="PanelAction/TabContainer/Asia/TabContainerAsia/Traffic" instance=ExtResource( 11 )]
+position = Vector2( -8, -64 )
+script = null
+
+[node name="Energy" type="Tabs" parent="PanelAction/TabContainer/Asia/TabContainerAsia"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DEnergyInfrastructure" parent="PanelAction/TabContainer/Asia/TabContainerAsia/Energy" instance=ExtResource( 3 )]
+position = Vector2( -8, -64 )
+
+[node name="Agriculture" type="Tabs" parent="PanelAction/TabContainer/Asia/TabContainerAsia"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DAgronomicalInfrastructure" parent="PanelAction/TabContainer/Asia/TabContainerAsia/Agriculture" instance=ExtResource( 9 )]
+position = Vector2( -8, -64 )
+
+[node name="Buildings" type="Tabs" parent="PanelAction/TabContainer/Asia/TabContainerAsia"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DBuildingInfrastructure" parent="PanelAction/TabContainer/Asia/TabContainerAsia/Buildings" instance=ExtResource( 10 )]
+position = Vector2( -8, -64 )
+
+[node name="Industry" type="Tabs" parent="PanelAction/TabContainer/Asia/TabContainerAsia"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DIndustryInfrastructure" parent="PanelAction/TabContainer/Asia/TabContainerAsia/Industry" instance=ExtResource( 4 )]
+position = Vector2( -8, -64 )
+
+[node name="Africa" type="Tabs" parent="PanelAction/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+script = ExtResource( 12 )
+
+[node name="TabContainerAfrica" type="TabContainer" parent="PanelAction/TabContainer/Africa"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 2.0
+margin_bottom = 1.0
+custom_styles/tab_fg = ExtResource( 17 )
+tab_align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Traffic" type="Tabs" parent="PanelAction/TabContainer/Africa/TabContainerAfrica"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DTrafficInfrastructure" parent="PanelAction/TabContainer/Africa/TabContainerAfrica/Traffic" instance=ExtResource( 11 )]
+position = Vector2( -8, -64 )
+script = null
+
+[node name="Energy" type="Tabs" parent="PanelAction/TabContainer/Africa/TabContainerAfrica"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DEnergyInfrastructure" parent="PanelAction/TabContainer/Africa/TabContainerAfrica/Energy" instance=ExtResource( 3 )]
+position = Vector2( -8, -64 )
+
+[node name="Agriculture" type="Tabs" parent="PanelAction/TabContainer/Africa/TabContainerAfrica"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DAgronomicalInfrastructure" parent="PanelAction/TabContainer/Africa/TabContainerAfrica/Agriculture" instance=ExtResource( 9 )]
+position = Vector2( -8, -64 )
+
+[node name="Buildings" type="Tabs" parent="PanelAction/TabContainer/Africa/TabContainerAfrica"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DBuildingInfrastructure" parent="PanelAction/TabContainer/Africa/TabContainerAfrica/Buildings" instance=ExtResource( 10 )]
+position = Vector2( -8, -64 )
+
+[node name="Industry" type="Tabs" parent="PanelAction/TabContainer/Africa/TabContainerAfrica"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DIndustryInfrastructure" parent="PanelAction/TabContainer/Africa/TabContainerAfrica/Industry" instance=ExtResource( 4 )]
+position = Vector2( -8, -64 )
+
+[node name="Australia" type="Tabs" parent="PanelAction/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+script = ExtResource( 21 )
+
+[node name="TabContainerAustralia" type="TabContainer" parent="PanelAction/TabContainer/Australia"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 2.0
+margin_bottom = 1.0
+custom_styles/tab_fg = ExtResource( 17 )
+tab_align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Traffic" type="Tabs" parent="PanelAction/TabContainer/Australia/TabContainerAustralia"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DTrafficInfrastructure" parent="PanelAction/TabContainer/Australia/TabContainerAustralia/Traffic" instance=ExtResource( 11 )]
+position = Vector2( -8, -64 )
+script = null
+
+[node name="Energy" type="Tabs" parent="PanelAction/TabContainer/Australia/TabContainerAustralia"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DEnergyInfrastructure" parent="PanelAction/TabContainer/Australia/TabContainerAustralia/Energy" instance=ExtResource( 3 )]
+position = Vector2( -8, -64 )
+
+[node name="Agriculture" type="Tabs" parent="PanelAction/TabContainer/Australia/TabContainerAustralia"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DAgronomicalInfrastructure" parent="PanelAction/TabContainer/Australia/TabContainerAustralia/Agriculture" instance=ExtResource( 9 )]
+position = Vector2( -8, -64 )
+
+[node name="Buildings" type="Tabs" parent="PanelAction/TabContainer/Australia/TabContainerAustralia"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DBuildingInfrastructure" parent="PanelAction/TabContainer/Australia/TabContainerAustralia/Buildings" instance=ExtResource( 10 )]
+position = Vector2( -8, -64 )
+
+[node name="Industry" type="Tabs" parent="PanelAction/TabContainer/Australia/TabContainerAustralia"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 54.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Node2DIndustryInfrastructure" parent="PanelAction/TabContainer/Australia/TabContainerAustralia/Industry" instance=ExtResource( 4 )]
+position = Vector2( -8, -64 )
+
+[node name="ButtonOk" type="Button" parent="PanelAction"]
+margin_left = 1621.0
+margin_top = 8.0
+margin_right = 1919.0
+margin_bottom = 103.0
+theme = ExtResource( 16 )
+text = "Continue"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopupPanelTutorial" type="Panel" parent="PanelAction"]
+visible = false
+margin_left = 568.0
+margin_top = 165.0
+margin_right = 1367.0
+margin_bottom = 614.0
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 33 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabelTutorial" type="RichTextLabel" parent="PanelAction/PopupPanelTutorial"]
+margin_left = 21.0
+margin_top = 14.0
+margin_right = 775.0
+margin_bottom = 366.0
+theme = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonOk" type="Button" parent="PanelAction/PopupPanelTutorial"]
+margin_left = 279.804
+margin_top = 369.494
+margin_right = 505.804
+margin_bottom = 436.494
+theme = ExtResource( 16 )
+text = "Ok"
+script = ExtResource( 29 )
+
+[node name="SpriteContinents" type="Sprite" parent="PanelAction/PopupPanelTutorial"]
+visible = false
+position = Vector2( -439, -82 )
+scale = Vector2( 0.5, 0.4 )
+texture = ExtResource( 30 )
+
+[node name="SpriteDomains" type="Sprite" parent="PanelAction/PopupPanelTutorial"]
+visible = false
+position = Vector2( -371, -12 )
+scale = Vector2( 0.5, 0.4 )
+texture = ExtResource( 30 )
+
+[node name="SpritePolicies" type="Sprite" parent="PanelAction/PopupPanelTutorial"]
+visible = false
+position = Vector2( -316, 394 )
+scale = Vector2( 0.5, 0.4 )
+texture = ExtResource( 30 )
+
+[node name="Timer" type="Timer" parent="PanelAction/PopupPanelTutorial"]
+wait_time = 0.05
+script = ExtResource( 35 )
+
+[node name="PanelStartStop" type="Panel" parent="."]
+margin_right = 1920.0
+margin_bottom = 960.0
+input_pass_on_modal_close_click = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Music" type="AudioStreamPlayer" parent="PanelStartStop"]
+stream = ExtResource( 25 )
+volume_db = -8.0
+autoplay = true
+
+[node name="ColorRect" type="ColorRect" parent="PanelStartStop"]
+margin_right = 1920.0
+margin_bottom = 960.0
+theme = ExtResource( 16 )
+color = Color( 0.0980392, 0.14902, 0.14902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PanelStartStop/ColorRect"]
+margin_left = 128.0
+margin_top = 60.0
+margin_right = 4376.0
+margin_bottom = 810.0
+theme = ExtResource( 16 )
+custom_colors/font_color = Color( 0.862745, 0.866667, 0.815686, 1 )
+text = "CO2 Countdown
+
+
+Take measures to stop the global CO2 emissions
+before the countdown reaches 0.
+
+The remaining CO2 budget allows 300'000
+Megatonnes, as of 2022, according to the IPCC.
+If you let the counter decrease below
+zero, the global temperature will rise
+beyond 1,5 °C and the earth will face
+a climate catastrophe!
+
+
+
+V1.00, by Albin Meyer
+License: CC BY-NC-SA, 2022"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonRestart" type="Button" parent="PanelStartStop/ColorRect"]
+margin_left = 868.0
+margin_top = 818.0
+margin_right = 1155.0
+margin_bottom = 908.0
+theme = ExtResource( 16 )
+text = "Start"
+script = ExtResource( 18 )

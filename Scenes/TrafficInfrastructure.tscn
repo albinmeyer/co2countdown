@@ -1,0 +1,465 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://Resources/car_fossil_25_nobg.png" type="Texture" id=1]
+[ext_resource path="res://Resources/dollar_small_nobg.png" type="Texture" id=2]
+[ext_resource path="res://Sounds/buy_item.wav" type="AudioStream" id=3]
+[ext_resource path="res://Resources/dollar_large_nobg.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/TextureButtonFossil100Electric0.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/TextureButtonFossil75Electric25.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/TextureButtonFossil50Electric50.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/TextureButtonFossil25Electric75.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/TextureButtonFossil0Electric100.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/TextureButtonEfficiency0.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/TextureButtonEfficiency25.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/TextureButtonEfficiency50.gd" type="Script" id=12]
+[ext_resource path="res://Scripts/TextureButtonSufficiency0.gd" type="Script" id=13]
+[ext_resource path="res://Scripts/TextureButtonSufficiency50.gd" type="Script" id=14]
+[ext_resource path="res://Scripts/TextureButtonSufficiency100.gd" type="Script" id=15]
+[ext_resource path="res://Scripts/ButtonBuy.gd" type="Script" id=16]
+[ext_resource path="res://Resources/car_fossil_50_nobg.png" type="Texture" id=17]
+[ext_resource path="res://Resources/car_fossil_00_nobg.png" type="Texture" id=18]
+[ext_resource path="res://Resources/car_fossil_75_nobg.png" type="Texture" id=19]
+[ext_resource path="res://Resources/dollar_medium_nobg.png" type="Texture" id=20]
+[ext_resource path="res://Resources/recycling_medium_nobg.png" type="Texture" id=21]
+[ext_resource path="res://Resources/recycling_small_nobg.png" type="Texture" id=22]
+[ext_resource path="res://Resources/recycling_large_nobg.png" type="Texture" id=23]
+[ext_resource path="res://Scripts/Infrastructure.gd" type="Script" id=24]
+[ext_resource path="res://Scripts/InfrastructureData.gd" type="Script" id=25]
+[ext_resource path="res://theme.tres" type="Theme" id=26]
+[ext_resource path="res://Scripts/ButtonCancel.gd" type="Script" id=27]
+[ext_resource path="res://Sounds/click.ogg" type="AudioStream" id=28]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.337255, 0.501961, 0.443137, 1 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 24 )
+
+[node name="ColorRectSubstitution" type="ColorRect" parent="."]
+margin_left = 16.0
+margin_top = 67.0
+margin_right = 1616.0
+margin_bottom = 297.0
+theme = ExtResource( 26 )
+color = Color( 0.0980392, 0.14902, 0.14902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRectBar" type="ColorRect" parent="ColorRectSubstitution"]
+margin_left = 159.0
+margin_top = 124.0
+margin_right = 1176.0
+margin_bottom = 141.0
+color = Color( 0.121569, 0.517647, 0.0745098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect5" type="ColorRect" parent="ColorRectSubstitution"]
+margin_left = 1060.0
+margin_top = 56.0
+margin_right = 1272.0
+margin_bottom = 268.0
+rect_scale = Vector2( 1, 0.75 )
+color = Color( 0.121569, 0.517647, 0.0745098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButtonFossil0Electric100" type="TextureButton" parent="ColorRectSubstitution/ColorRect5"]
+margin_left = 7.0
+margin_top = 5.0
+margin_right = 207.0
+margin_bottom = 158.0
+rect_pivot_offset = Vector2( 100, 100 )
+texture_normal = ExtResource( 18 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="ColorRectSubstitution"]
+margin_left = 822.0
+margin_top = 55.0
+margin_right = 1034.0
+margin_bottom = 267.0
+rect_scale = Vector2( 1, 0.75 )
+color = Color( 0.121569, 0.517647, 0.0745098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButtonFossil25Electric75" type="TextureButton" parent="ColorRectSubstitution/ColorRect4"]
+margin_left = 7.0
+margin_top = 6.0
+margin_right = 207.0
+margin_bottom = 159.0
+rect_pivot_offset = Vector2( 100, 100 )
+texture_normal = ExtResource( 1 )
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="ColorRectSubstitution"]
+margin_left = 582.0
+margin_top = 53.0
+margin_right = 794.0
+margin_bottom = 265.0
+rect_scale = Vector2( 1, 0.75 )
+color = Color( 0.121569, 0.517647, 0.0745098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButtonFossil50Electric50" type="TextureButton" parent="ColorRectSubstitution/ColorRect3"]
+margin_left = 7.0
+margin_top = 5.0
+margin_right = 207.0
+margin_bottom = 158.0
+rect_pivot_offset = Vector2( 100, 100 )
+texture_normal = ExtResource( 17 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRectSubstitution"]
+margin_left = 342.0
+margin_top = 52.0
+margin_right = 554.0
+margin_bottom = 264.0
+rect_scale = Vector2( 1, 0.75 )
+color = Color( 0.121569, 0.517647, 0.0745098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButtonFossil75Electric25" type="TextureButton" parent="ColorRectSubstitution/ColorRect2"]
+margin_left = 6.0
+margin_top = 5.0
+margin_right = 206.0
+margin_bottom = 158.0
+rect_pivot_offset = Vector2( 100, 100 )
+texture_normal = ExtResource( 19 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect1" type="ColorRect" parent="ColorRectSubstitution"]
+margin_left = 101.0
+margin_top = 51.0
+margin_right = 313.0
+margin_bottom = 263.0
+rect_scale = Vector2( 1, 0.75 )
+color = Color( 0.121569, 0.517647, 0.0745098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButtonFossil100Electric0" type="TextureButton" parent="ColorRectSubstitution/ColorRect1"]
+light_mask = 3
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 207.0
+margin_bottom = 160.0
+rect_pivot_offset = Vector2( 100, 100 )
+texture_normal = ExtResource( 18 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="ColorRectSubstitution"]
+margin_top = 3.0
+margin_right = 288.0
+margin_bottom = 27.0
+text = "Substitution (Reduce    )"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRectSubstitution/Label2"]
+margin_left = 755.0
+margin_right = 881.0
+margin_bottom = 36.0
+custom_colors/font_color = Color( 0.737255, 0.105882, 0.313726, 1 )
+text = "CO2"
+
+[node name="ColorRectEfficiency" type="ColorRect" parent="."]
+margin_left = 16.0
+margin_top = 307.0
+margin_right = 1616.0
+margin_bottom = 537.0
+theme = ExtResource( 26 )
+color = Color( 0.0980392, 0.14902, 0.14902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRectBar" type="ColorRect" parent="ColorRectEfficiency"]
+margin_left = 199.0
+margin_top = 121.0
+margin_right = 814.0
+margin_bottom = 138.0
+color = Color( 0.121569, 0.517647, 0.0745098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRectEff1" type="ColorRect" parent="ColorRectEfficiency"]
+margin_left = 101.0
+margin_top = 45.0
+margin_right = 313.0
+margin_bottom = 257.0
+rect_scale = Vector2( 1, 0.75 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButtonEfficiency0" type="TextureButton" parent="ColorRectEfficiency/ColorRectEff1"]
+margin_left = 8.0
+margin_top = 6.0
+margin_right = 208.0
+margin_bottom = 206.0
+rect_pivot_offset = Vector2( 100, 100 )
+texture_normal = ExtResource( 22 )
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRectEff2" type="ColorRect" parent="ColorRectEfficiency"]
+margin_left = 398.0
+margin_top = 44.0
+margin_right = 610.0
+margin_bottom = 256.0
+rect_scale = Vector2( 1, 0.75 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButtonEfficiency25" type="TextureButton" parent="ColorRectEfficiency/ColorRectEff2"]
+margin_left = 5.0
+margin_top = 6.0
+margin_right = 205.0
+margin_bottom = 206.0
+rect_pivot_offset = Vector2( 100, 100 )
+texture_normal = ExtResource( 21 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRectEff3" type="ColorRect" parent="ColorRectEfficiency"]
+margin_left = 680.0
+margin_top = 44.0
+margin_right = 892.0
+margin_bottom = 256.0
+rect_scale = Vector2( 1, 0.75 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButtonEfficiency50" type="TextureButton" parent="ColorRectEfficiency/ColorRectEff3"]
+margin_left = 7.0
+margin_top = 5.0
+margin_right = 207.0
+margin_bottom = 205.0
+rect_pivot_offset = Vector2( 100, 100 )
+texture_normal = ExtResource( 23 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="ColorRectEfficiency"]
+margin_top = 3.0
+margin_right = 240.0
+margin_bottom = 27.0
+text = "Efficiency (Reduce    )"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRectEfficiency/Label2"]
+margin_left = 683.0
+margin_right = 809.0
+margin_bottom = 36.0
+custom_colors/font_color = Color( 0.737255, 0.105882, 0.313726, 1 )
+text = "CO2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRectSufficiency" type="ColorRect" parent="."]
+margin_left = 16.0
+margin_top = 547.0
+margin_right = 1616.0
+margin_bottom = 777.0
+theme = ExtResource( 26 )
+color = Color( 0.0980392, 0.14902, 0.14902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRectBar" type="ColorRect" parent="ColorRectSufficiency"]
+margin_left = 206.0
+margin_top = 112.0
+margin_right = 821.0
+margin_bottom = 129.0
+color = Color( 0.121569, 0.517647, 0.0745098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRectSuff1" type="ColorRect" parent="ColorRectSufficiency"]
+margin_left = 103.0
+margin_top = 41.0
+margin_right = 315.0
+margin_bottom = 253.0
+rect_scale = Vector2( 1, 0.75 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButtonSufficiency0" type="TextureButton" parent="ColorRectSufficiency/ColorRectSuff1"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 208.0
+margin_bottom = 206.0
+rect_pivot_offset = Vector2( 100, 100 )
+texture_normal = ExtResource( 4 )
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRectSuff2" type="ColorRect" parent="ColorRectSufficiency"]
+margin_left = 399.0
+margin_top = 41.0
+margin_right = 611.0
+margin_bottom = 253.0
+rect_scale = Vector2( 1, 0.75 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButtonSufficiency50" type="TextureButton" parent="ColorRectSufficiency/ColorRectSuff2"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 206.0
+margin_bottom = 205.0
+rect_pivot_offset = Vector2( 100, 100 )
+texture_normal = ExtResource( 20 )
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRectSuff3" type="ColorRect" parent="ColorRectSufficiency"]
+margin_left = 683.0
+margin_top = 41.0
+margin_right = 895.0
+margin_bottom = 253.0
+rect_scale = Vector2( 1, 0.75 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButtonSufficiency100" type="TextureButton" parent="ColorRectSufficiency/ColorRectSuff3"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 205.0
+margin_bottom = 206.0
+rect_pivot_offset = Vector2( 100, 100 )
+texture_normal = ExtResource( 2 )
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="ColorRectSufficiency"]
+margin_top = 3.0
+margin_right = 264.0
+margin_bottom = 27.0
+text = "Sufficiency (Reduce     and       )"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRectSufficiency/Label2"]
+margin_left = 724.0
+margin_right = 850.0
+margin_bottom = 36.0
+custom_colors/font_color = Color( 0.737255, 0.105882, 0.313726, 1 )
+text = "CO2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="ColorRectSufficiency/Label2"]
+margin_left = 998.0
+margin_right = 1214.0
+margin_bottom = 36.0
+custom_colors/font_color = Color( 0.647059, 0.784314, 0.733333, 1 )
+text = "Income"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Data" type="Node" parent="."]
+script = ExtResource( 25 )
+
+[node name="PopupPanel" type="Panel" parent="."]
+visible = false
+margin_left = 325.0
+margin_top = 75.0
+margin_right = 1225.0
+margin_bottom = 775.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopupSound" type="AudioStreamPlayer" parent="PopupPanel"]
+stream = ExtResource( 28 )
+
+[node name="RichTextLabelQuestionBuy" type="RichTextLabel" parent="PopupPanel"]
+margin_left = 11.0
+margin_top = 13.0
+margin_right = 891.0
+margin_bottom = 593.0
+theme = ExtResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonBuy" type="Button" parent="PopupPanel"]
+margin_left = 577.0
+margin_top = 594.0
+margin_right = 777.0
+margin_bottom = 654.0
+theme = ExtResource( 26 )
+text = "Buy"
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sound" type="AudioStreamPlayer" parent="PopupPanel/ButtonBuy"]
+stream = ExtResource( 3 )
+
+[node name="ButtonCancel" type="Button" parent="PopupPanel"]
+margin_left = 107.0
+margin_top = 597.0
+margin_right = 333.0
+margin_bottom = 657.0
+theme = ExtResource( 26 )
+text = "Cancel"
+script = ExtResource( 27 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
