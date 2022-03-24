@@ -4,11 +4,13 @@
 export.cfg
 export_presets.cfg
 
-co2countdown.apk
+co2countdown.*
 co2countdown.apk.idsig
 .apk.idsig
 
+
 addons/
+android/
 
 # Mono-specific ignores
 .mono/
